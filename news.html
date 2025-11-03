@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News</title>
+<link rel="stylesheet" href="{% static 'css/demo.css' %}">
+</head>
+
+<body>
+    <h1>Welcome To BREAKING NEWS Portal</h1>
+    <img src="{% static 'images/news.png' %}" alt="Img">
+      <ul>
+        <li><a href="/movies/">Movies Information</a></li>
+        <li><a href="/sports/">Sports Information</a></li>
+        <li><a href="/politics/">Politics Information</a></li>
+    </ul>
+    {% if head_msg %}
+        <h2>{{ head_msg }}</h2>
+        <p>{{ sub_msg1 }}</p>
+        <p>{{ sub_msg2 }}</p>
+        <p>{{ sub_msg3 }}</p>
+
+    {% endif %}
+
+    {% if type == 'movies' %}
+    <img src="{% static 'images/img.png' %}" alt="">
+    <img src="{% static 'images/img_1.png' %}" alt="">
+    <img src="{% static 'images/img_2.png' %}" alt="">
+
+    {% elif type == 'sports' %}
+    <img src="{% static 'images/img_3.png' %}" alt="">
+    <img src="{% static 'images/img_4.png' %}" alt="">
+    <img src="{% static 'images/img_5.png' %}" alt="">
+
+    {% elif type == 'politics' %}
+    <img src="{% static 'images/img_6.png' %}" alt="">
+    <img src="{% static 'images/img_7.png' %}" alt="">
+    <img src="{% static 'images/img_8.png' %}" alt="">
+    {% endif %}
+
+</body>
+
+</html>
